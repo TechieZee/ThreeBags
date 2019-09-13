@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+
+{%block title%}3bags - College Campus Stories{%endblock%}
+
+
+{%block content%}
+
+{%if success%}
+Thank you for signing up
+{%else%}
+<h1>Please fill the form:</h1>
+
+<form method="post">
+	{{form.as_p}}
+
+	{%csrf_token%}
+
+	<input type="submit" value="Sign-up">
+
+</form>
+{%endif%}
+
+{%endblock%}

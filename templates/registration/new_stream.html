@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+
+{%block title%}Add New Stream{%endblock%}
+
+{%block content%}
+
+{%if success%}
+<h1>Added your stream</h1>
+{%endif%}
+
+<form method="post">
+	{{form.as_p}}
+	{% csrf_token %}
+	<input type="submit" value="Add Stream">
+</form>
+
+{%endblock%}

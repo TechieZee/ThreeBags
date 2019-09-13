@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+
+{%block title%}Create new post{%endblock%}
+
+{%block content%}
+
+<h1>Please fill in the following details:</h1>
+
+<form method="post">
+	{{form.as_p}}
+
+	{%csrf_token%}
+
+	<input type="submit" value="Submit">
+	
+
+</form>
+
+{%endblock%}

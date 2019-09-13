@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+
+{%block title%}Register New Manager{%endblock%}
+
+{%block content%}
+
+<h1>Register New User</h1>
+
+<form method="post">
+	{{user_form.as_p}}
+	{%csrf_token%}
+
+	<input type="submit" value="Register">
+</form>
+
+{%endblock%}

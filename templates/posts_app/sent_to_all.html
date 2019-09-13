@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+
+{%block title%}Email post{%endblock%}
+
+{%block content%}
+
+{%if sent%}
+
+<h1>Email Successfully sent to:</h1>
+
+{%for email in to_emails %}
+
+<p>{{email}}</p>
+
+{%endfor%}
+
+{%else%}
+<h2>Email Sending Failed!</h2>
+{%endif%}
+
+<a href="{% url 'posts_app:post_detail' post_id %}">Go back</a>
+
+{%endblock%}
