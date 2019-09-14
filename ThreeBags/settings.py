@@ -124,9 +124,9 @@ USE_TZ = True
 
 # login
 
-LOGIN_REDIRECT_URL = 'posts_app:posts_list'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'profiles_app:managers_home'
+LOGIN_URL = 'profiles_app:login'
+LOGOUT_URL = 'profiles_app:logout'
 LOGOUT_REDIRECT_URL = 'home_signup'
 
 

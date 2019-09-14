@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block title%}Welcome {{request.user.username}}{%endblock%}
+
+
+{%block content%}
+
+
+
+<nav>
+	
+<ul>
+	
+	<li>
+		<a href="{% url 'posts_app:post_create' %}">Create new Post</a>
+	</li>
+
+	<li>
+		<a href="{% url 'profiles_app:new_stream' %}">Add new Stream</a>
+	</li>
+
+	<li>
+		<a href="{% url 'profiles_app:new_college' %}">Add new College</a>
+	</li>
+
+</ul>
+
+</nav>
+
+
+{%endblock%}

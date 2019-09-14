@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views as main_views
-from django.contrib.auth import views as auth_views
-from profiles_app import views as profiles_app_views
+
 
 
 urlpatterns = [
@@ -25,7 +24,5 @@ urlpatterns = [
     path('', main_views.home_student_form, name='home_signup'),
     path('posts/', include('posts_app.urls', namespace='posts')),
     path('managers/', include('profiles_app.urls', namespace='managers')),
-    path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('register/', profiles_app_views.register, name='register'),
+    
 ]

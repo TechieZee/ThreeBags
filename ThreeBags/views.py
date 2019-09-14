@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from profiles_app.forms import StudentForm
-
+from django.urls import reverse_lazy
 
 
 def home_student_form(request):
 	form = StudentForm()
-	success = False
 
 	if request.method == 'POST':
 		form = StudentForm(request.POST)
@@ -13,5 +12,7 @@ def home_student_form(request):
 			form.save(commit=True)
 			success = True
 
+			return HttpResponseRedirect(reverse_lazy('posts_app:posts_list'))
 
-	return render(request, 'home.html', {'form': form, 'success': success})
+
+	return render(request, 'home.html', {'form': form})

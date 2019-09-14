@@ -4,7 +4,7 @@
 
 {%block content%}
 
-<form action="/login/?next={{ next }}" method="post">
+<form action="/managers/login/?next={{ next }}" method="post">
 	{{form.as_p}}
 	{% csrf_token %}
 	<input type="hidden" name="next" value="{{ next }}" />

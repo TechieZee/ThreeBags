@@ -59,3 +59,10 @@ def new_college(request):
 
 
 	return render(request, 'registration/new_college.html', {'form': form, 'success': success})
+
+
+
+
+@login_required
+def managers_home(request):
+	return render(request, 'profiles_app/managers_home.html')

@@ -6,7 +6,53 @@
 <body>
 
 
-Welcome to 3bags.com
+<h1>Welcome to 3bags.com</h1>
+<nav>
+	
+	<ul>
+		
+		{%if request.user.is_authenticated %}
+
+		<li>
+			<a href="{% url 'profiles_app:logout' %}">Logout</a>
+		</li>
+
+		<li>
+			<a href="{% url 'profiles_app:managers_home' %}">Managers Dashboard</a>
+		</li>
+
+		{%else%}
+
+		<li>
+			<a href="{% url 'profiles_app:login' %}">Manager-Login</a>
+		</li>
+
+		<li>
+			<a href="{% url 'profiles_app:register' %}">New Manager?</a>
+		</li>
+
+		{%endif%}
+
+		<li>
+			<a href="{% url 'posts_app:posts_list' %}">All Posts</a>
+		</li>
+
+		<li>
+			<a href="{% url 'home_signup' %}">Homepage</a>
+		</li>
+
+		<li>
+			<a href="{% url 'posts_app:posts_list' %}">Posts</a>
+		</li>
+
+
+	</ul>
+
+
+</nav>
+
+
+
 
 {%block content%}
 
